@@ -13,14 +13,12 @@
             font-family: 'Inter', sans-serif; 
             -webkit-overflow-scrolling: touch; 
         }
-        /* Custom adjustment for image fit inside mockup */
         .mockup-img {
             width: 100%;
             height: auto;
             object-fit: cover;
             display: block;
         }
-        /* Custom style untuk gambar mockup di section solusi */
         .solution-mockup-img {
             width: 100%;
             height: auto;
@@ -28,6 +26,80 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             display: block;
         }
+        /* Style Tambahan untuk Smooth Carousel */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* --- SMK Feature Card & Carousel Custom Style --- */
+.card-smk-container {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.icon-box-smk {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.75rem;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.browser-mockup {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.browser-header {
+    background-color: #222E3B;
+    padding: 0.5rem 0.75rem;
+}
+
+.browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.dot-red { background-color: #FF5F56; }
+.dot-yellow { background-color: #FFBD2E; }
+.dot-green { background-color: #27C93F; }
+
+.browser-url {
+    color: #94a3b8;
+    font-size: 10px;
+    font-family: monospace;
+    opacity: 0.7;
+}
+
+.carousel-img-setup {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+/* --- Sinkronisasi Mode Gelap Otomatis --- */
+@media (prefers-color-scheme: dark) {
+    .card-smk-container {
+        background-color: #0A192F;
+        border-color: #1e293b;
+    }
+    .browser-mockup {
+        border-color: #1e293b;
+        background-color: #030A16;
+    }
+}
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
@@ -44,27 +116,12 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Cetak RPP, LKPD & Asesmen</span><br>
                 Hanya Dalam 120 Detik.
             </h1>
-            <p class="relative text-xs md:text-sm text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed">
-                Tonton video panduan dan demonstrasi di bawah ini untuk melihat bagaimana Modul Ajar AI Pro menyelamatkan ribuan jam waktu guru Indonesia dari siksaan administrasi.
+            <p class="relative text-xs md:text-sm text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
+                Solusi cerdas terintegrasi AI untuk menyelamatkan ribuan jam waktu guru Indonesia dari siksaan administrasi yang rumit.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-                <div class="relative aspect-video bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-xl shadow-blue-950/40 transform hover:scale-[1.02] hover:border-blue-500/40 transition-all duration-300">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/U6h-FRhgiqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="relative aspect-video bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-xl shadow-blue-950/40 transform hover:scale-[1.02] hover:border-blue-500/40 transition-all duration-300">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/F979Pxjp6Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="relative aspect-video bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-xl shadow-blue-950/40 transform hover:scale-[1.02] hover:border-blue-500/40 transition-all duration-300">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/9dllyPsz4xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="relative aspect-video bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-xl shadow-blue-950/40 transform hover:scale-[1.02] hover:border-blue-500/40 transition-all duration-300">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/vb4-xZh3cjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <p class="text-[11px] md:text-xs text-slate-500 font-medium mb-4">Silakan klik tombol play pada video untuk melihat demonstrasi langsung</p>
-            <div class="max-w-sm mx-auto px-4">
-                <a href="#pricing" class="block bg-[#ECA913] hover:bg-[#d6960f] text-slate-950 font-extrabold text-xs md:text-sm py-4 px-6 rounded-xl shadow-lg shadow-yellow-500/20 transition-all transform active:scale-95 hover:-translate-y-0.5 mt-4 mb-5 tracking-wide">
+            <div class="max-w-sm mx-auto px-4 mb-8">
+                <a href="#pricing" class="block bg-[#ECA913] hover:bg-[#d6960f] text-slate-950 font-extrabold text-xs md:text-sm py-4 px-6 rounded-xl shadow-lg shadow-yellow-500/20 transition-all transform active:scale-95 hover:-translate-y-0.5 tracking-wide">
                     SAYA MAU AKSES APLIKASINYA SEKARANG →
                 </a>
             </div>
@@ -83,6 +140,95 @@
         <span class="hover:text-slate-600 transition-colors">SMK / MAK</span>
     </div>
 
+    <section class="py-16 px-6 md:px-12 bg-slate-900 text-white w-full">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-[10px] uppercase font-bold text-blue-400 tracking-widest block mb-1">Demonstrasi Langsung</span>
+                <h2 class="font-extrabold text-xl md:text-3xl text-white mb-3">Tonton Bagaimana AI Ini Bekerja</h2>
+                <p class="text-xs md:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">Silakan klik tombol play pada playlist video di bawah ini untuk melihat kehebatan fitur Modul Ajar AI Pro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-[#0A192F] border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-slate-950 rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/U6h-FRhgiqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm md:text-base text-white mb-1">Panduan Memulai & Setup Utama</h3>
+                        <p class="text-[11px] md:text-xs text-slate-400">Cara cepat menghubungkan API Key dan memilih target Capaian Pembelajaran.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0A192F] border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-slate-950 rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/F979Pxjp6Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm md:text-base text-white mb-1">Generate RPP & Sintaks 3M</h3>
+                        <p class="text-[11px] md:text-xs text-slate-400">Langkah otomatis menyusun kegiatan inti (PBL/PjBL) kurang dari 1 menit.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0A192F] border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-slate-950 rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/9dllyPsz4xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm md:text-base text-white mb-1">Pembuatan LKPD & Bahan Bacaan</h3>
+                        <p class="text-[11px] md:text-xs text-slate-400">Menghasilkan lampiran materi super tebal dan lembar kerja siap cetak.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0A192F] border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div class="relative aspect-video bg-slate-950 rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/vb4-xZh3cjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm md:text-base text-white mb-1">Asesmen & Kisi-Kisi Rubrik</h3>
+                        <p class="text-[11px] md:text-xs text-slate-400">Merumuskan evaluasi kognitif, afektif, dan psikomotorik secara terpisah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mt-16 border-t border-indigo-100/40 pt-16 max-w-6xl mx-auto">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-2">
+                    <!-- Card 1: Dashboard Intuitif -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                        <div class="w-full aspect-[16/10] overflow-hidden bg-gray-900 border-b border-gray-100">
+                            <img src="tampilan-1.png" alt="Dashboard Intuitif" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center text-center">
+                            <h4 class="font-bold text-lg sm:text-xl text-light-mode mb-1.5">Dashboard Intuitif</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Tampilan mudah dipahami pemula</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Voiceover Natural -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                        <div class="w-full aspect-[16/10] overflow-hidden bg-gray-900 border-b border-gray-100">
+                            <img src="tampilan-2.png" alt="Voiceover Natural" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center text-center">
+                            <h4 class="font-bold text-lg sm:text-xl text-light-mode mb-1.5">Voiceover Natural</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Aksen lokal Indonesia yang ramah</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Render 4K/UHD -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                        <div class="w-full aspect-[16/10] overflow-hidden bg-gray-900 border-b border-gray-100">
+                            <img src="tampilan-3.png" alt="Render 4K/UHD" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center text-center">
+                            <h4 class="font-bold text-lg sm:text-xl text-light-mode mb-1.5">Render 4K/UHD</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Kualitas video jernih di proyektor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <section class="py-16 px-6 md:px-12 bg-white w-full">
         <div class="max-w-6xl mx-auto">
@@ -115,7 +261,7 @@
                     <div class="flex gap-4 md:flex-col md:items-start">
                         <span class="text-3xl md:mb-2">💸</span>
                         <div>
-                            <h3 class="font-bold text-sm md:text-base text-red-950 mb-2">Terpaksa Beli RPP Joki Ratusan Lik</h3>
+                            <h3 class="font-bold text-sm md:text-base text-red-950 mb-2">Terpaksa Beli RPP Joki Ratusan Ribu</h3>
                             <p class="text-xs md:text-sm text-slate-600 leading-relaxed">Karena mepet waktu akreditasi, Anda beli RPP dari oknum. Ternyata formatnya "copy-paste" asal-asalan, nama sekolah orang lain masih nyangkut.</p>
                         </div>
                     </div>
@@ -127,7 +273,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="py-16 px-6 md:px-12 bg-[#F8FAFC] border-t border-b border-slate-100 text-center w-full">
         <div class="max-w-4xl mx-auto">
@@ -145,7 +290,6 @@
         </div>
     </section>
 
-
     <section class="py-16 px-6 md:px-12 bg-white w-full">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mb-12 text-center">
@@ -161,6 +305,7 @@
                     </div>
                 </div>
 
+                <!-- SEKSI FITUR SMK DENGAN IMAGE CAROUSEL (3 GAMBAR) -->
                 <div class="flex gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-col justify-between">
                     <div class="flex gap-4">
                         <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white shrink-0 text-xl shadow-md">⚙️</div>
@@ -170,16 +315,24 @@
                         </div>
                     </div>
                     
-                     <div class="w-full mt-6 bg-white rounded-xl shadow-md border border-slate-200/60 overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                        <div class="bg-[#222E3B] px-3 py-2 flex gap-1.5 items-center">
+                     <div class="w-full mt-6 bg-white rounded-xl shadow-md border border-slate-200/60 overflow-hidden relative group">
+                        <!-- Top Bar Mockup Browser -->
+                        <div class="bg-[#222E3B] px-3 py-2 flex gap-1.5 items-center z-20 relative">
                             <div class="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
                             <div class="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
                             <div class="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                            <span class="text-[10px] text-slate-400 font-mono ml-2 truncate opacity-60">app.modulajarpro.com/smk-dashboard</span>
                         </div>
-                        <div class="p-4 aspect-[4/2.5] flex items-center justify-center bg-slate-50 border-t border-slate-100">
-                            <span class="text-[10px] text-center font-bold text-blue-950 tracking-wide uppercase leading-normal px-2">
-                                💻 SCREENSHOT DASHBOARD APLIKASI
-                            </span>
+                        
+                        <!-- Wrapper Kontainer Slides Gambar -->
+                        <div class="relative bg-slate-950 overflow-hidden aspect-[4/3]">
+   
+                            <!-- Indikator Posisi Halaman (Dots) -->
+                            <div class="absolute bottom-2 right-3 flex gap-1 z-10">
+                                <span class="dot-indicator w-1.5 h-1.5 rounded-full bg-blue-500 transition-all duration-300"></span>
+                                <span class="dot-indicator w-1.5 h-1.5 rounded-full bg-slate-600 transition-all duration-300"></span>
+                                <span class="dot-indicator w-1.5 h-1.5 rounded-full bg-slate-600 transition-all duration-300"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,14 +340,13 @@
                 <div class="flex gap-4 p-5 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-slate-50/50 transition-all duration-300">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 text-xl shadow-sm">🖨️</div>
                     <div>
-                        <h3 class="font-bold text-sm md:text-base text-slate-900 mb-2">Format Fisik Siap Cetak Kertas*</h3>
+                        <h3 class="font-bold text-sm md:text-base text-slate-900 mb-2">Format Fisik Siap Cetak Kertas</h3>
                         <p class="text-xs md:text-sm text-slate-500 leading-relaxed">AI kami dilatih khusus untuk membuat kolom isian titik-titik lembar kerja dan tabel observasi kosong agar rapi saat diprint.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <section class="bg-[#030A16] text-white py-16 px-6 md:px-12 text-center relative overflow-hidden w-full">
         <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] pointer-events-none rounded-full"></div>
@@ -206,7 +358,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-left">
                 <div class="bg-[#0A192F]/80 backdrop-blur-sm border border-slate-800/80 p-6 rounded-xl hover:border-blue-500/30 transition-colors">
                     <span class="text-blue-400 text-xs md:text-sm font-bold block mb-3">1. Modul Inti Terintegrasi</span>
-                    <p class="text-xs text-slate-400 leading-relaxed">Identitas lengkap, terbagi per pertemuan, skenario 3M, and sinkronisasi sintaks model otomatis.</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">Identitas lengkap, terbagi per pertemuan, skenario 3M, dan sinkronisasi sintaks model otomatis.</p>
                 </div>
                 <div class="bg-[#0A192F]/80 backdrop-blur-sm border border-slate-800/80 p-6 rounded-xl hover:border-blue-500/30 transition-colors">
                     <span class="text-blue-400 text-xs md:text-sm font-bold block mb-3">2. Lembar Asesmen Siswa</span>
@@ -214,7 +366,7 @@
                 </div>
                 <div class="bg-[#0A192F]/80 backdrop-blur-sm border border-slate-800/80 p-6 rounded-xl hover:border-blue-500/30 transition-colors">
                     <span class="text-blue-400 text-xs md:text-sm font-bold block mb-3">3. Buku Panduan Guru</span>
-                    <p class="text-xs text-slate-400 leading-relaxed">Dokumen rahasia berisi Kunci Jawaban materi pembahasan, and instruksi penanganan siswa khusus.</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">Dokumen rahasia berisi Kunci Jawaban materi pembahasan, dan instruksi penanganan siswa khusus.</p>
                 </div>
                 <div class="bg-[#0A192F]/80 backdrop-blur-sm border border-slate-800/80 p-6 rounded-xl hover:border-blue-500/30 transition-colors">
                     <span class="text-blue-400 text-xs md:text-sm font-bold block mb-3">4. Lampiran LKPD & Materi</span>
@@ -223,7 +375,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="py-16 px-6 md:px-12 bg-white w-full">
         <div class="max-w-5xl mx-auto">
@@ -251,12 +402,12 @@
                                 <td class="p-4 bg-blue-50/30 text-blue-950 font-semibold text-green-600">🟢 Titik-titik & tabel kosong murni untuk tulis tangan.</td>
                             </tr>
                             <tr class="hover:bg-slate-50/40 transition-colors">
-                                <td class="p-4 font-bold text-slate-900">Pmisahan Rahasia</td>
+                                <td class="p-4 font-bold text-slate-900">Pemisahan Rahasia</td>
                                 <td class="p-4 text-slate-500">Soal & Kunci digabung dalam satu kertas.</td>
                                 <td class="p-4 bg-blue-50/30 text-blue-950 font-semibold text-green-600">🟢 Lembar Siswa & Kunci Jawaban Terpisah.</td>
                             </tr>
                             <tr class="hover:bg-slate-50/40 transition-colors">
-                                <td class="p-4 font-bold text-slate-900">Kessesuaian SMK</td>
+                                <td class="p-4 font-bold text-slate-900">Kesesuaian SMK</td>
                                 <td class="p-4 text-slate-500">General, tidak paham materi produktif SMK.</td>
                                 <td class="p-4 bg-blue-50/30 text-blue-950 font-semibold text-green-600">🟢 Database dropdown khusus Ratusan jurusan SMK.</td>
                             </tr>
@@ -271,7 +422,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="py-16 px-6 md:px-12 bg-[#F8FAFC] text-center w-full">
         <div class="max-w-5xl mx-auto">
@@ -289,7 +439,6 @@
             </div>
         </div>
     </section>
-
 
     <section id="pricing" class="bg-[#030A16] text-white py-16 px-6 md:px-12 relative overflow-hidden w-full">
         <div class="max-w-4xl mx-auto">
@@ -346,7 +495,6 @@
         </div>
     </section>
 
-
     <section class="py-16 px-6 md:px-12 bg-white w-full">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-center font-bold text-xl md:text-2xl text-slate-900 mb-12">Pertanyaan Paling Sering Diajukan</h2>
@@ -368,7 +516,6 @@
         </div>
     </section>
 
-
     <footer class="bg-[#030A16] text-slate-500 text-center text-xs py-16 px-6 border-t border-slate-800 w-full">
         <div class="max-w-6xl mx-auto">
             <p class="font-bold text-slate-400 mb-3 text-sm tracking-wider">Modul Ajar AI Pro</p>
@@ -383,6 +530,72 @@
             <p class="text-slate-600 opacity-80">© 2026 Hak Cipta Dilindungi Undang-Undang.</p>
         </div>
     </footer>
+
+    <!-- LOGIKAL SCRIPT CAROUSEL (Vanilla JavaScript Super Ringan) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const track = document.getElementById("carouselTrack");
+            const dots = document.querySelectorAll(".dot-indicator");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            
+            let currentIndex = 0;
+            const totalSlides = 3;
+            let slideInterval;
+
+            function updateCarousel(index) {
+                // Ubah posisi track slide
+                track.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Ubah status dots indicator aktif/nonaktif
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove("bg-slate-600");
+                        dot.classList.add("bg-blue-500", "w-3"); // Dot aktif jadi agak panjang
+                    } else {
+                        dot.classList.remove("bg-blue-500", "w-3");
+                        dot.classList.add("bg-slate-600");
+                    }
+                });
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                let nextIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel(nextIndex);
+            }
+
+            function prevSlide() {
+                let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel(prevIndex);
+            }
+
+            // Fungsi Auto Play Selisih 4 Detik
+            function startAutoPlay() {
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(slideInterval);
+            }
+
+            // Event Listener Klik Manual
+            nextBtn.addEventListener("click", () => {
+                stopAutoPlay();
+                nextSlide();
+                startAutoPlay();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                stopAutoPlay();
+                prevSlide();
+                startAutoPlay();
+            });
+
+            // Jalankan otomatis saat halaman selesai dimuat
+            startAutoPlay();
+        });
+    </script>
 
 </body>
 </html>
